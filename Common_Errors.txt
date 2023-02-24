@@ -1,3 +1,6 @@
+Remember to include -> #!/usr/bin/env python3
+  so that ROS recognizes your code as a python file
+
 Have multiple programs in the same folder? Remember to add them to the end of your setup.py file inside the folder:
 
   ...
