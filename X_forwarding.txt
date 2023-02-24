@@ -1,0 +1,16 @@
+X-forwarding:
+WINDOWS:
+1. I powershell, skriv inn:
+setx DISPLAY "127.0.0.1:0.0" (om det ikkje fungerer, prøv setx DISPLAY "localhost:0.0")
+2. Lukk powershell.
+3. Last ned og start ein x-server (X410 (https://x410.dev/) fungerer bra på Windows 10/11 og
+krever ingen konfigurasjon. Berre start programmet og la det køyre i bakgrunnen.)
+4. Start powershell, logg på serveren med: ssh -Y [brukarnamn]@[adresse]
+
+
+MAC:
+1. Last ned XQuartz: https://www.xquartz.org/
+2. Køyr XQuartz (dette krever ingen konfigurasjon, berre start og la programmet køyre i
+bagrunnen)
+3. Logg på serveren med: ssh -Y [brukarnamn]@[adresse]
+For å teste X-forwarding: køyr kommandoen: xeyes
