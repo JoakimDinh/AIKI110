@@ -1,0 +1,29 @@
+Have multiple programs in the same folder? Remember to add them to the end of your setup.py file inside the folder:
+
+  ...
+  entry_points={
+   'console_scripts': [
+   'abc123_publisher = abc123_demo.abc123_publisher:main',
+   'abc123_subscriber = abc123_demo.abc123_subscriber:main'
+   ],
+  ...
+
+No executable found?
+  Did you remember to "colcon build" in the ~/ros2_ws directory?
+
+Looking to see what is published in a channel?
+  ros2 topic list
+  ros2 topic echo [kanalnavn]
+  
+Want to post a message in the channel?
+  ros2 topic pub /chat
+  std_msgs/String "data: Hei!" --once
+
+
+End a program: 
+  ctrl + C
+
+Want to run two programs at once from the same terminal?
+  ros2 run abc123_demo abc123_subscriber &
+Access the previous program by writing "fg" in the terminal
+
