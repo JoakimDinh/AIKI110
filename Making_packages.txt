@@ -1,0 +1,38 @@
+#Create a package:
+
+ros2 pkg create prosjektnavn_sign --build-type ament_python
+
+#Create package for msg/srv files:
+
+ros2 pkg create prosjektnavn_sign --build-type ament_cmake
+
+#inside prosjektnavn_sign/srv folder create ProsjektnavnBrytertilstand.srv with:
+
+int8 bryter_id
+---
+int8 bryter_tilstand
+
+#In CMakeLists.txt, right above ament_package() add:
+
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+"srv/ProsjektnavnBrytertilstand.srv")
+
+#under package.xml, below "<test_depend>ament_lint_common</test_depend>" add:
+
+<build_depend>rosidl_default_generators</build_depend>
+<exec_depend>rosidl_default_runtime</exec_depend>
+<member_of_group>rosidl_interface_packages</member_of_group>
+
+#build the package run these commands in ~/ros2:
+
+colcon build --packages-select prosjektnavn_sign
+
+source ~/ros2/install/setup.bash
+
+#check if you service in in the system:
+
+ros2 interface list
+
+#You should now be able to import the package to your python program using from prosjektnavn_sign.srv import ProsjektnavnBrytertilstand
