@@ -1,0 +1,4 @@
+Connect to the rasberry pi via ssh:
+
+
+ssh hal@10.42.0.1
