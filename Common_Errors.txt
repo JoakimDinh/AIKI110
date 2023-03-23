@@ -30,3 +30,6 @@ Want to run two programs at once from the same terminal?
   ros2 run abc123_demo abc123_subscriber &
 Access the previous program by writing "fg" in the terminal
 
+Clock skew error?
+
+date -s "23 MAR 2023 11:00:00"
