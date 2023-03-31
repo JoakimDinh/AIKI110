@@ -1,7 +1,7 @@
-Remember to include -> #!/usr/bin/env python3
+#Remember to include -> #!/usr/bin/env python3
   so that ROS recognizes your code as a python file
 
-Have multiple programs in the same folder? Remember to add them to the end of your setup.py file inside the folder:
+#Have multiple programs in the same folder? Remember to add them to the end of your setup.py file inside the folder:
 
   ...
   entry_points={
@@ -11,25 +11,37 @@ Have multiple programs in the same folder? Remember to add them to the end of yo
    ],
   ...
 
-No executable found?
+#No executable found?
   Did you remember to "colcon build" in the ~/ros2_ws directory?
 
-Looking to see what is published in a channel?
+#Looking to see what is published in a channel?
   ros2 topic list
   ros2 topic echo [kanalnavn]
   
-Want to post a message in the channel?
-  ros2 topic pub /chat
-  std_msgs/String "data: Hei!" --once
+#Want to post a message in the channel?
+
+ros2 topic pub /chat
+std_msgs/String "data: Hei!" --once
 
 
-End a program: 
-  ctrl + C
+#End a program: 
 
-Want to run two programs at once from the same terminal?
-  ros2 run abc123_demo abc123_subscriber &
-Access the previous program by writing "fg" in the terminal
+ctrl + C
 
-Clock skew error?
+#Want to run two programs at once from the same terminal?
+
+ros2 run abc123_demo abc123_subscriber &
+
+#Access the previous program by writing "fg" in the terminal
+
+#Clock skew error?
 
 date -s "23 MAR 2023 11:00:00"
+
+#Building srv file failed?
+  Try adding an empty line at the end of your scripts
+  
+#Package not showing up when using "ros2 interface list"?
+  Try running:
+    source ~/ros2/install/setup.bash
+    colcon build
