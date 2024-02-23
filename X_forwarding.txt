@@ -10,7 +10,8 @@ krever ingen konfigurasjon. Berre start programmet og la det køyre i bakgrunnen
 
 MAC:
 1. Last ned XQuartz: https://www.xquartz.org/
-2. Køyr XQuartz (dette krever ingen konfigurasjon, berre start og la programmet køyre i
-bagrunnen)
+2. Køyr XQuartz
 3. Logg på serveren med: ssh -Y [brukarnamn]@[adresse]
 For å teste X-forwarding: køyr kommandoen: xeyes
+For å få X-forwarding til å kjøre må du kjøre terminalen fra XQuartz.
+Eller installere xquarts gjennom homebrew. 
